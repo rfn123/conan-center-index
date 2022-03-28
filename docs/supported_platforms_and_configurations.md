@@ -36,6 +36,7 @@ For more information see [conan-io/conan-docker-tools](https://github.com/conan-
 
 ## Windows
 
+- CMake: 3.15.6
 - Compilers: Visual Studio:
   
   - 2017 (19.16.27045)
@@ -47,10 +48,11 @@ For more information see [conan-io/conan-docker-tools](https://github.com/conan-
 - Runtimes: MT/MD (Release), MTd/MDd (Debug)
 - Options:
   - Shared, Static (option `"shared": [True, False]` in the recipe when available)
-  - Header Only (option `"header_only": [True, False]` is only added with the value True)
+  - Header Only (option `"header_only": [True, False]` if available)
 
 ## Linux
 
+- CMake: null
 - Compilers:
   - GCC versions: 5, 7, 8, 9, 10, 11
   - Clang versions: 11, 12, 13
@@ -65,6 +67,7 @@ For more information see [conan-io/conan-docker-tools](https://github.com/conan-
 
 ## MacOS
 
+- CMake: null
 - Compilers: Apple-clang versions 11.0.3, 12.0.5, 13.0.0
 - C++ Standard Library (`libcxx`): `libc++`
 - Architectures: x86_64, armv8
