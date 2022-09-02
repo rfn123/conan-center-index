@@ -130,7 +130,7 @@ class ogrecmakeconan(ConanFile):
             self.requires("xorg/system")
             
     def validate(self):
-        if self.options["config_enable_quad_buffer_stereo"].myoption == True:
+        if self.options.config_enable_quad_buffer_stereo == True:
             raise ConanInvalidConfiguration("This option would require NVAPI and AMDQBS which are not on conan-center yet.")
         
 
@@ -216,7 +216,7 @@ class ogrecmakeconan(ConanFile):
         # TODO: delte line 200-208 once the conan recipes are available
         # skipped pkgs: RenderDoc OpenGLES OpenGLES2 OpenGLES3 DirectX DirectX11 (mingw should come with DirectX support already)
         # NVAPI AMDQBS AMDAGS Remotery GLSLOptimizer HLSL2GLSL SDL2 Softimage 
-        ogre_pkg_modules = ["AMDQBS", "Cg", "HLSL2GLSL", "GLSLOptimizer", "OpenGLES", "OpenGLES2", "OpenGLES3", "SDL2", "Softimage", "Wix"]
+        ogre_pkg_modules = ["AMDQBS", "HLSL2GLSL", "GLSLOptimizer", "OpenGLES", "OpenGLES2", "OpenGLES3", "SDL2", "Softimage", "Wix"]
         ogre_pkg_module_path = os.path.join(self.build_folder, self._source_subfolder, "CMake", "Packages")
         for pkg_module in ogre_pkg_modules:
             pkg_path = os.path.join(ogre_pkg_module_path, f"Find{pkg_module}.cmake")
